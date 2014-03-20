@@ -17,6 +17,10 @@ There's a bunch of [ChatOps](https://github.com/atmos/hubot-deploy/blob/master/d
 You need to set the following environmental variables.
 
 * **HUBOT\_GITHUB\_TOKEN**: A [GitHub token](https://github.com/settings/applications#personal-access-tokens) with [repo\_deployment](https://developer.github.com/v3/oauth/#scopes). The owner of this token creates [Deployments][1].
+* during the preview period you may need to manually add the repo_deployment scope to your token. As a reference the following curl command will do this for you. No assurances re: security or correctness of the command are given
+``curl -X PATCH -H "Content-Type: application/json" -d '{"add_scopes": ["repo_deployment"]}'  -u <your github username> -H "Accept application/vnd.github.cannonball-preview+json" https://api.github.com/authorizations/<your Personal Access Token>`
+
+```
 
 ## See Also
 
